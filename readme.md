@@ -1,10 +1,10 @@
-How to use:
+How to use:<br>
 create executable first<br>
-example 0: 
+example 1: 
 ```
 g++ -o jlang main.cpp lexer.cpp parser.cpp codegen.cpp interpreter.h 
 ```
-then do ./jlang <<filename>><br>
+then do ./jlang filename<br>
 example 2: 
 
 ```
