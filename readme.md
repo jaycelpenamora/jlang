@@ -29,4 +29,5 @@ Interpreter:
 It supports: <br>
 - Arithmetic operations (addition, subtraction, multiplication, division) <br>
 - Variables Assignment <br>
+- Conditional statements (if-else) <br>
 - Print Statement <br>
