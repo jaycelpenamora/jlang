@@ -9,6 +9,17 @@ struct ASTNode {
   string type;
   string value;
   vector<ASTNode *> children;
+  void print(int depth = 0) {
+    std::cout << std::string(depth * 2, ' ') << type;
+    if (!value.empty())
+      std::cout << " (" << value << ")";
+    std::cout << std::endl;
+
+    for (auto child : children) {
+      if (child)
+        child->print(depth + 1);
+    }
+  }
 };
 
 // Parser Class
@@ -19,11 +30,14 @@ private:
 
   Token peek();
   Token consume();
-  ASTNode *parseExpression();
-  ASTNode *parseStatement();
 
 public:
   Parser(vector<Token> inputTokens) : tokens(inputTokens) {}
+  ASTNode *parseExpression();
+  ASTNode *parseStatement();
+  ASTNode *parseBlock();
+  ASTNode *parseTerm();
+  ASTNode *parseFactor();
   ASTNode *parse();
 };
 
